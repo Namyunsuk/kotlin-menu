@@ -1,9 +1,9 @@
 package menu.model
 
 import camp.nextstep.edu.missionutils.Randoms
+import menu.utils.CategoryInfo
 
 class Category {
-    private val categories = listOf("일식", "한식", "중식", "아시안", "양식")
     fun makeCategory(): List<String> {
         val coachCategory = mutableListOf<String>()
         while (coachCategory.size != CATEGORY_SIZE) {
@@ -22,7 +22,7 @@ class Category {
 
     fun selectCategory(): String {
         val randomNum = Randoms.pickNumberInRange(1, 5)
-        return categories[randomNum - 1]
+        return CategoryInfo.matchCategory(randomNum)
     }
 
     companion object {

@@ -8,7 +8,7 @@ enum class CategoryInfo(val category: String, val categoryNum: Int) {
     WESTERN("양식", 5);
 
     companion object {
-        fun matchCount(categoryNum: Int): String {
+        fun matchCategory(categoryNum: Int): String {
             return values().first { it.categoryNum == categoryNum }.category
         }
     }
